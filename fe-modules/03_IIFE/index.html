@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+    <script src="./lib//jQuery.min.js"></script>
+    <script src="./moduleA.js"></script>
+    <script src="./moduleB.js"></script>
+    <script>
+        ModuleA.sum(2, 3); // 5
+        ModuleA.log(); // 'module-a'
+
+        // 模块私有成员不可访问和修改
+        console.log(ModuleA.name); // undefined
+
+        // ModuleB需要依赖JQuery加载完成后才能使用
+        $(function () {
+            ModuleB.animate(); // 变换背景
+        })
+    </script>
+</head>
+
+<body>
+    <div style="height:200px">
+
+    </div>
+</body>
+
+</html>
